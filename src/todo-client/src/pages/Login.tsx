@@ -14,13 +14,15 @@ export default function Login () {
     document.title = 'Login | ToDoApp'
   }, [])
 
-  function handleRedirect () {
+  function handleRedirect (e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
       goTo('/home')
     }, 3000)
   }
+
   return (
     <div className={`${theme} select-none`}>
       <main className='grid sm:grid-cols-1 sm:grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 min-h-screen dark:bg-gray-700 bg-slate-200'>
@@ -47,10 +49,7 @@ export default function Login () {
             Sign in
           </h1>
           <form
-            onSubmit={e => {
-              e.preventDefault()
-              handleRedirect()
-            }}
+            onSubmit={handleRedirect}
             className='min-w-full flex flex-col gap-3'
           >
             <div className='mb-5'>
@@ -90,7 +89,6 @@ export default function Login () {
               className='flex justify-evenly items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300
                font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
               disabled={isLoading}
-              // onClick={handleRedirect}
             >
               {isLoading ? <LoadingSvg>Verifying </LoadingSvg> : 'Login'}
             </button>

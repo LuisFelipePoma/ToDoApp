@@ -1,3 +1,9 @@
+# NodeJs
+package-lock.json
+dist
+build
+node_modules
+
 # Prerequisites
 *.d
 
