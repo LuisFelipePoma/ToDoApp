@@ -1,3 +1,3 @@
 export default function Home () {
-  return <div>Pov HOme</div>
+  return <div>Main Home</div>
 }
