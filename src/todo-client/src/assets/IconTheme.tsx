@@ -4,6 +4,7 @@ export default function IconThemeLightDark (
   return (
     <svg
       viewBox='0 0 24 24'
+      className='flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400-hover:text-gray-900 hover:text-white'
       fill='currentColor'
       height='1em'
       width='1em'

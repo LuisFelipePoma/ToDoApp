@@ -5,10 +5,11 @@ import { useEffect } from 'react'
 import IconThemeLightDark from '../assets/IconTheme'
 
 export default function HomeLayout () {
-  const { theme, toggleTheme } = useTheme()
+  const { theme, toggleTheme, setTheme } = useTheme()
 
   useEffect(() => {
     document.title = 'Home | ToDoApp'
+    if (theme === 'dark') setTheme('dark')
   }, [])
 
   return (
@@ -23,6 +24,7 @@ export default function HomeLayout () {
           <IconSideBar />
         </button>
 
+        {/* nav sidebar */}
         <nav className='flex flex-col justify-between p-5 dark:bg-gray-800 bg-gray-50 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0'>
           <section className='px-3 py-4 overflow-y-auto '>
             <ul className='space-y-2 font-medium'>

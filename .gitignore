@@ -4,6 +4,10 @@ dist
 build
 node_modules
 
+# Dotnet ASPNET
+bin
+obj
+
 # Prerequisites
 *.d
 
